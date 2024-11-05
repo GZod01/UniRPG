@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxiantjhevkij"]
+
+[ext_resource type="Script" path="res://specialtiles/bed.gd" id="1_4t8rb"]
+[ext_resource type="Texture2D" uid="uid://b1nf0u7x5c08h" path="res://Assets/kenney_roguelike-rpg-pack/Spritesheet/roguelikeSheet_transparent.png" id="1_36yob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k244s"]
+atlas = ExtResource("1_36yob")
+region = Rect2(255, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek54h"]
+atlas = ExtResource("1_36yob")
+region = Rect2(238, 17, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhrij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k244s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek54h")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjkbc"]
+size = Vector2(18, 17)
+
+[node name="BedDownRight" type="Area2D"]
+script = ExtResource("1_4t8rb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dhrij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_rjkbc")
+
+[connection signal="area_entered" from="." to="." method="sth_enter"]
+[connection signal="area_exited" from="." to="." method="sth_exit"]
+[connection signal="body_entered" from="." to="." method="sth_enter"]
+[connection signal="body_exited" from="." to="." method="sth_exit"]

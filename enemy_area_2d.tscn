@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4htanwxodbw"]
+
+[ext_resource type="Script" path="res://enemy_area_2d.gd" id="1_wseas"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j351"]
+
+[node name="EnemyArea2D" type="Area2D"]
+script = ExtResource("1_wseas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_3j351")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="PetitCooldown" type="Timer" parent="."]
+
+[node name="GrosCooldown" type="Timer" parent="."]

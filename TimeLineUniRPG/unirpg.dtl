@@ -1,0 +1,19 @@
+join maire right [animation="Bounce In"]
+if {PieuvreKilledAmount} == 0:
+	maire: Bonjour,\
+Je suis le maire,\
+aujourd'hui l'heure est grave, une pieuvre hante nos océans, va l'attaquer s'il te plait.\
+Le village te remerciera pour cet acte de bravoure!
+	return
+label SuperChoice
+maire: Bonjour mon ami, je suis le maire, de quoi veux tu parler aujourd'hui?
+- J'ai tué la pieuvre! | [if {PieuvreKilledAmount} == 1] [else="hide"]
+	leave maire [animation="Fade Out Up"]
+	join player left [animation="Slide In Down"]
+	player: J'ai tué cette putain de pieuvre!
+	leave player [animation="Bounce Out"]
+	join maire right [animation="Zoom In"]
+	maire: Oh wow, franchement t'es le meilleur aventurier de tous les temps que j'ai jamais connu, maintenant va dans la foret, une horde de 3 zombies t'y attedra, tue les s'il te plait!
+- Parlons du village
+	maire: Mais va te faire foutre sale connard! je suis le maire, je passe déjà mes nuits à m'occuper du village alors ta gueule, en plus je me fait vieux et fatigué, il faudrait vraiment quelqu'un pour me remplacer, tu devrai y songer! Désolé je suis un peu aigri parfois comme je suis vieu
+	jump SuperChoice

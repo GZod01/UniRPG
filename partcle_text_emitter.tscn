@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://drqenuerhb1se"]
+
+[ext_resource type="PackedScene" uid="uid://d0qmoyroudbsi" path="res://particle_text.tscn" id="1_30l25"]
+[ext_resource type="Script" path="res://partcle_text_emitter.gd" id="1_ybo1d"]
+[ext_resource type="Material" uid="uid://c0d4e8o018pt2" path="res://partcle_text_emitter.tres" id="4_a3sjm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rhvnm"]
+viewport_path = NodePath(".")
+
+[node name="PartcleTextEmitter" type="Node2D"]
+script = ExtResource("1_ybo1d")
+text = "Helloaeraererar"
+
+[node name="ParticleText" parent="." instance=ExtResource("1_30l25")]
+text = "Helloaeraererar"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1
+process_material = ExtResource("4_a3sjm")
+texture = SubResource("ViewportTexture_rhvnm")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0

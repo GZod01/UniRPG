@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.839844, 0.229645, 0.229645, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Default",
+"description": "C'est le maire de ton village connard!",
+"display_name": "Le Maire",
+"mirror": false,
+"nicknames": ["Poto"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Default": {
+"export_overrides": {
+"image": "\"res://Assets/Characters/th-removebg-preview.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.5,
+"scene": ""
+}
+},
+"scale": 1.0
+}

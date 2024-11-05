@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://pgix3xd56utg"]
+
+[ext_resource type="Script" path="res://specialtiles/door_1.gd" id="1_0fev8"]
+[ext_resource type="Texture2D" uid="uid://b1nf0u7x5c08h" path="res://Assets/kenney_roguelike-rpg-pack/Spritesheet/roguelikeSheet_transparent.png" id="1_hjgw5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iugqe"]
+atlas = ExtResource("1_hjgw5")
+region = Rect2(612, 51, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo62p"]
+atlas = ExtResource("1_hjgw5")
+region = Rect2(629, 51, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1myhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iugqe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo62p")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o42w"]
+size = Vector2(16, 32)
+
+[node name="Door_1" type="Area2D"]
+script = ExtResource("1_0fev8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1myhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_6o42w")
+
+[connection signal="area_entered" from="." to="." method="sth_enter"]
+[connection signal="area_exited" from="." to="." method="sth_exit"]
+[connection signal="body_entered" from="." to="." method="sth_enter"]
+[connection signal="body_exited" from="." to="." method="sth_exit"]

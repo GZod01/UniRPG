@@ -1,0 +1,565 @@
+[gd_scene load_steps=49 format=3 uid="uid://bw2g0ehqjgbhs"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_d53a7"]
+[ext_resource type="Texture2D" uid="uid://bim1oaptyvg7c" path="res://Assets/Peasant/peasant.png" id="2_43dtm"]
+[ext_resource type="Texture2D" uid="uid://d00tji1jq0mt4" path="res://Assets/kenney_roguelike-rpg-pack/Spritesheet/BoatBack.png" id="2_xgs83"]
+[ext_resource type="Texture2D" uid="uid://dbvqum8ayjlat" path="res://Assets/Peasant/peasant_jump_001.png" id="3_2jrwx"]
+[ext_resource type="Texture2D" uid="uid://cj4mte32sktya" path="res://Assets/kenney_roguelike-rpg-pack/Spritesheet/BoatFront.png" id="3_22ddu"]
+[ext_resource type="Texture2D" uid="uid://7b3e5yibb113" path="res://Assets/Peasant/peasant_jump_002.png" id="4_xb0fh"]
+[ext_resource type="Texture2D" uid="uid://ul2rhepemwcw" path="res://Assets/Peasant/peasant_jump_003.png" id="5_3vdax"]
+[ext_resource type="Texture2D" uid="uid://c5753l1g4nwxm" path="res://Assets/Peasant/peasant_jump_004.png" id="6_8swmj"]
+[ext_resource type="Texture2D" uid="uid://vsme4q4ojc26" path="res://Assets/Peasant/peasant_run_001.png" id="7_2whtb"]
+[ext_resource type="Texture2D" uid="uid://dd2ofda8ni4v2" path="res://Assets/Peasant/peasant_attack2_001.png" id="7_p0x16"]
+[ext_resource type="Texture2D" uid="uid://trl2nmk823fo" path="res://Assets/Peasant/peasant_attack2_002.png" id="8_p7ey3"]
+[ext_resource type="Texture2D" uid="uid://jsspwvrk1dnl" path="res://Assets/Peasant/peasant_crouch_001.png" id="8_r6wpi"]
+[ext_resource type="Texture2D" uid="uid://b1i12ft063fjj" path="res://Assets/Peasant/peasant_run_002.png" id="8_xo3bv"]
+[ext_resource type="Texture2D" uid="uid://cl5ws15y2tv0v" path="res://Assets/Peasant/peasant_run_003.png" id="9_7d30o"]
+[ext_resource type="Texture2D" uid="uid://ch0r1vcwoct3f" path="res://Assets/Peasant/peasant_attack2_003.png" id="9_a2u22"]
+[ext_resource type="Texture2D" uid="uid://c3khid45wwl44" path="res://Assets/Peasant/peasant_crouch_002.png" id="9_vp41b"]
+[ext_resource type="Texture2D" uid="uid://cbjlcsiuy0n5n" path="res://Assets/Peasant/peasant_attack_001.png" id="10_vjtag"]
+[ext_resource type="Texture2D" uid="uid://blpaj5fedpelo" path="res://Assets/Peasant/peasant_run_004.png" id="10_vs3iw"]
+[ext_resource type="Texture2D" uid="uid://bhhnudsotqdu4" path="res://Assets/Peasant/peasant_die_001.png" id="11_1bjii"]
+[ext_resource type="Texture2D" uid="uid://dwcmgp5dagbql" path="res://Assets/Peasant/peasant_attack_002.png" id="11_l2fj4"]
+[ext_resource type="Texture2D" uid="uid://br2bqeyxa5jf3" path="res://Assets/Peasant/peasant_run_005.png" id="11_oystp"]
+[ext_resource type="Texture2D" uid="uid://cxaop3sayn1cj" path="res://Assets/Peasant/peasant_run_006.png" id="12_hf63m"]
+[ext_resource type="Texture2D" uid="uid://cxx1cciq10g1j" path="res://Assets/Peasant/peasant_attack_003.png" id="12_tmvmt"]
+[ext_resource type="Texture2D" uid="uid://ut2f2o7x1pi1" path="res://Assets/Peasant/peasant_die_002.png" id="12_wt2ny"]
+[ext_resource type="Texture2D" uid="uid://wdeaa1d8y4bw" path="res://Assets/Peasant/peasant_die_003.png" id="13_ddvkf"]
+[ext_resource type="Texture2D" uid="uid://c84hcq4mwl1od" path="res://Assets/Peasant/peasant_run_007.png" id="13_y7j7h"]
+[ext_resource type="Texture2D" uid="uid://jio8hnsirro4" path="res://Assets/Peasant/peasant_die_004.png" id="14_uyck2"]
+[ext_resource type="Texture2D" uid="uid://ct18iemx7q54c" path="res://Assets/Peasant/peasant_run_008.png" id="14_xqyhv"]
+[ext_resource type="Texture2D" uid="uid://cbcde8hrsofue" path="res://Assets/Peasant/peasant_die_005.png" id="15_ftyun"]
+[ext_resource type="Texture2D" uid="uid://c3j7esywv47yl" path="res://Assets/Peasant/peasant_walk_001.png" id="15_ixgwo"]
+[ext_resource type="Texture2D" uid="uid://dca6l3husbsev" path="res://Assets/Peasant/peasant_walk_002.png" id="16_lekt5"]
+[ext_resource type="Texture2D" uid="uid://bp31har1j5rpm" path="res://Assets/Peasant/peasant_hit_001.png" id="16_uwu1a"]
+[ext_resource type="Texture2D" uid="uid://3fkvhc1q0r6k" path="res://Assets/Peasant/peasant_walk_003.png" id="17_fjl34"]
+[ext_resource type="Texture2D" uid="uid://f6ojctkx2rt3" path="res://Assets/Peasant/peasant_hit_002.png" id="17_onf4c"]
+[ext_resource type="Texture2D" uid="uid://cpwhde5kc7rex" path="res://Assets/Peasant/peasant_walk_004.png" id="18_xrdp0"]
+[ext_resource type="Texture2D" uid="uid://c1tvs8q3o5qrg" path="res://Assets/Peasant/peasant_walk_005.png" id="19_11wgd"]
+[ext_resource type="Texture2D" uid="uid://4n4ybvs57qpq" path="res://Assets/Peasant/peasant_walk_006.png" id="20_p2ii3"]
+[ext_resource type="Texture2D" uid="uid://byi0t84ypn7bm" path="res://Assets/Peasant/peasant_walk_007.png" id="21_yqhi3"]
+[ext_resource type="Texture2D" uid="uid://bn4aie364405q" path="res://Assets/Peasant/peasant_walk_008.png" id="22_64yv0"]
+[ext_resource type="Script" path="res://debug_menu.gd" id="40_a6e3t"]
+[ext_resource type="Script" path="res://item_slash_area_2d.gd" id="40_y7p1n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lyp5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_vjtag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l2fj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tmvmt")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p0x16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p7ey3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a2u22")
+}],
+"loop": false,
+"name": &"attack_axe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_r6wpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vp41b")
+}],
+"loop": false,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_43dtm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1bjii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wt2ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ddvkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uyck2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ftyun")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_uwu1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_onf4c")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2jrwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xb0fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3vdax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8swmj")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2whtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xo3bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7d30o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vs3iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oystp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hf63m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_y7j7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xqyhv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ixgwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lekt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fjl34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xrdp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_11wgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p2ii3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yqhi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_64yv0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7xdx"]
+size = Vector2(10, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xvdm"]
+size = Vector2(2, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmcjf"]
+font_size = 30
+font_color = Color(1, 0, 0, 1)
+outline_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y215y"]
+bg_color = Color(0.160784, 0.160784, 0.160784, 0.435294)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tupri"]
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_u1tyq"]
+font_size = 41
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_d53a7")
+
+[node name="Boat" type="Node2D" parent="."]
+visible = false
+position = Vector2(1, 4)
+
+[node name="BoatSprite" type="Sprite2D" parent="Boat"]
+texture = ExtResource("2_xgs83")
+
+[node name="BoatFront" type="Sprite2D" parent="Boat"]
+z_index = 1
+texture = ExtResource("3_22ddu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, -11)
+scale = Vector2(0.55, 0.55)
+sprite_frames = SubResource("SpriteFrames_lyp5n")
+animation = &"die"
+centered = false
+offset = Vector2(-8, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q7xdx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="ItemSlashArea2D" type="Area2D" parent="."]
+visible = false
+script = ExtResource("40_y7p1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlashArea2D"]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_6xvdm")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemSlashArea2D"]
+position = Vector2(0, -17)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LiveHitShow" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerNameLabel" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -43.5
+offset_right = 88.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jean-Jacques Rousseau"
+
+[node name="InUI" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LiveLabel" type="Label" parent="CanvasLayer/UI/InUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -148.0
+offset_bottom = 38.0
+grow_horizontal = 0
+text = "x/x vies"
+label_settings = SubResource("LabelSettings_nmcjf")
+
+[node name="Inventory" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -240.0
+offset_right = 350.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Inventory/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+text = "Inventaire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Armor&CraftTable" type="HBoxContainer" parent="CanvasLayer/UI/Inventory/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.2
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/UI/Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlots" type="ItemList" parent="CanvasLayer/UI/Inventory/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.6
+theme_override_font_sizes/font_size = 10
+allow_rmb_select = true
+text_overrun_behavior = 4
+max_columns = 8
+same_column_width = true
+fixed_column_width = 70
+icon_mode = 0
+fixed_icon_size = Vector2i(70, 70)
+
+[node name="ChangeMap" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -153.0
+offset_right = 169.5
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y215y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/ChangeMap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/ChangeMap/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Voulez vous partir d'ici?"
+label_settings = SubResource("LabelSettings_tupri")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AcceptChangeButton" type="Button" parent="CanvasLayer/UI/ChangeMap/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Accepter"
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI/ChangeMap/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "(Déplacer vous pour annuler)"
+horizontal_alignment = 1
+
+[node name="Proposition" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -153.0
+offset_right = 169.5
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y215y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/Proposition"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Proposition/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Voulez vous dormir"
+label_settings = SubResource("LabelSettings_tupri")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Accept" type="Button" parent="CanvasLayer/UI/Proposition/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Accepter"
+
+[node name="Refuse" type="Button" parent="CanvasLayer/UI/Proposition/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Refuser"
+
+[node name="DebugMenu" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("40_a6e3t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/DebugMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/DebugMenu/VBoxContainer"]
+layout_mode = 2
+text = "Menu de debugging"
+label_settings = SubResource("LabelSettings_u1tyq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitButton" type="Button" parent="CanvasLayer/UI/DebugMenu/VBoxContainer"]
+layout_mode = 2
+text = "Retirer une vie
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/DebugMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ajouter un item à l'inventaire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+alignment = 1
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button" type="Button" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ajouter"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/UI/DebugMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ajouter un item à l'inventaire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+alignment = 1
+icon_alignment = 1
+expand_icon = true
+
+[node name="RemItemButton" type="Button" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ajouter"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/UI/DebugMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ajouter un item à l'inventaire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="ParticleButton" type="Button" parent="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ajouter"
+
+[node name="CompetenceMenu" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/UI/ChangeMap/VBoxContainer/AcceptChangeButton" to="." method="_on_accept_change_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Proposition/VBoxContainer/Accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Proposition/VBoxContainer/Refuse" to="." method="_on_refuse_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/DebugMenu/VBoxContainer/HitButton" to="CanvasLayer/UI/DebugMenu" method="_on_hit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer/Button" to="CanvasLayer/UI/DebugMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer2/RemItemButton" to="CanvasLayer/UI/DebugMenu" method="_on_rem_item_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/DebugMenu/VBoxContainer/HBoxContainer3/ParticleButton" to="CanvasLayer/UI/DebugMenu" method="_on_particle_button_pressed"]

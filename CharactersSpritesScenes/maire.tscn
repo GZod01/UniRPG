@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf6p6akffjxrp"]
+
+[ext_resource type="Material" uid="uid://hwftlocw54b2" path="res://CharactersSpritesScenes/mairematerial.tres" id="1_v3kl7"]
+[ext_resource type="Texture2D" uid="uid://bim1oaptyvg7c" path="res://Assets/Peasant/peasant.png" id="2_ykl08"]
+
+[node name="Maire" type="Sprite2D"]
+material = ExtResource("1_v3kl7")
+texture = ExtResource("2_ykl08")
