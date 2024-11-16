@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d06fc1wd0v6ko"
+path="res://.godot/imported/Explosion in water-14.wav-7033f132ac59ec74c8dec15b7ecde09c.sample"
+
+[deps]
+
+source_file="res://Assets/GameDevMarketBundle/explosion-blast-pack-2/Explosion_And_Blast_Pack2_v3/Wave/48_24/Explosion in water-14.wav"
+dest_files=["res://.godot/imported/Explosion in water-14.wav-7033f132ac59ec74c8dec15b7ecde09c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

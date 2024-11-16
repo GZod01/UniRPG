@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hp7yv4iihnvo"
+path="res://.godot/imported/Sci-Fi Laser Explosion-02.wav-7b8a7bbcebccdaa5a368f4132103148a.sample"
+
+[deps]
+
+source_file="res://Assets/GameDevMarketBundle/explosion-blast-pack-2/Explosion_And_Blast_Pack2_v3/Wave/48_24/Sci-Fi Laser Explosion-02.wav"
+dest_files=["res://.godot/imported/Sci-Fi Laser Explosion-02.wav-7b8a7bbcebccdaa5a368f4132103148a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

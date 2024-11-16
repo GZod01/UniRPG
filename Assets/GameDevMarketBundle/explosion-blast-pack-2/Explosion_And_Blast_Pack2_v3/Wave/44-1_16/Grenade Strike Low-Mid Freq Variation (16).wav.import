@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csmqdo3urqr6n"
+path="res://.godot/imported/Grenade Strike Low-Mid Freq Variation (16).wav-501b2a11f65d31a55fdef89a19026bf3.sample"
+
+[deps]
+
+source_file="res://Assets/GameDevMarketBundle/explosion-blast-pack-2/Explosion_And_Blast_Pack2_v3/Wave/44-1_16/Grenade Strike Low-Mid Freq Variation (16).wav"
+dest_files=["res://.godot/imported/Grenade Strike Low-Mid Freq Variation (16).wav-501b2a11f65d31a55fdef89a19026bf3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

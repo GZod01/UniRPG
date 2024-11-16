@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgu8u0p31aqhu"
+path="res://.godot/imported/Bomb Strike, Destroy, Variation (16).wav-abc28d4acaf7523a21bb77fffa9dcd98.sample"
+
+[deps]
+
+source_file="res://Assets/GameDevMarketBundle/explosion-blast-pack-2/Explosion_And_Blast_Pack2_v3/Wave/44-1_16/Bomb Strike, Destroy, Variation (16).wav"
+dest_files=["res://.godot/imported/Bomb Strike, Destroy, Variation (16).wav-abc28d4acaf7523a21bb77fffa9dcd98.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

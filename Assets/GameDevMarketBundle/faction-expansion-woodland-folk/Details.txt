@@ -1,0 +1,14 @@
+FANTASY RPG Faction Expansion - Woodland Folk  (by Franuka) v1.0
+-------------------------
+Thank you for getting this asset pack!
+Included are the files for each asset in three sizes (100%, 200% and 300%), .png format, transparent background.
+
+Frame size depends on the file, but they all fit a 16x16 grid. To know the exact frame size of a character, you need to divide file size by the number of columns (for width) or rows (for height). For example, Deer01_idle.png's file size is 64x128px (1x version), and it has 4 columns and 4 rows. 64/4 = 16 , and 128/4 = 32. Thus, frame size is 16x32px.
+---
+All assets were created from scratch by me.
+* Contact: franukai@gmail.com
+* Instagram: https://www.instagram.com/franuka.art/
+* Twitter: https://twitter.com/franuka_art
+
+If you like what I do, consider supporting me by buying my packs, sharing, or sending your feedback.
+Have a good time making your games, and send me a link if you make something cool, I'd love to check your projects! :)

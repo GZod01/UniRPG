@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://oateyor2v4n3"
+path="res://.godot/imported/Boomy_Explosion, Variation (6).wav-ddfa6762249a47a946331d9542256675.sample"
+
+[deps]
+
+source_file="res://Assets/GameDevMarketBundle/explosion-blast-pack-2/Explosion_And_Blast_Pack2_v3/Wave/48_24/Boomy_Explosion, Variation (6).wav"
+dest_files=["res://.godot/imported/Boomy_Explosion, Variation (6).wav-ddfa6762249a47a946331d9542256675.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwqms35b8p0c4"
+path="res://.godot/imported/Explosion Earthshaking Variation (16).wav-9bfc3d859395b85b2f4b5878ac5bd51e.sample"
+
+[deps]
+
+source_file="res://Assets/GameDevMarketBundle/explosion-blast-pack-2/Explosion_And_Blast_Pack2_v3/Wave/44-1_16/Explosion Earthshaking Variation (16).wav"
+dest_files=["res://.godot/imported/Explosion Earthshaking Variation (16).wav-9bfc3d859395b85b2f4b5878ac5bd51e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
