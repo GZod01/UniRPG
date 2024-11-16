@@ -13,6 +13,7 @@ var max_lives = max_lives_player
 var die: bool = false
 
 func _ready() -> void:
+	Globals.updateKeySettings()
 	Globals.register_current_player(self)
 	$CanvasLayer/UI/InUI/LiveLabel.text = ("%d/%d vies" % [lives, max_lives])
 	print(get_tree().current_scene.name)

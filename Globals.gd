@@ -66,11 +66,43 @@ var storySave = {
 	"inv":{},
 	"storyVariables":{ #Dialogic Variables
 		"PieuvreKilleld":0
-	}
+	},
+	"actionKeys":{}
 }
 
 var currentPlayer:CharacterBody2D=CharacterBody2D.new()
 
+
+
+var actionsKeysDescriptions = {
+	"up":"Se déplacer vers le haut",
+	"down": "Se déplacer vers le bas",
+	"left":"Se déplacer vers la gauche",
+	"right":"Se déplacer vers la droite",
+	"sprint":"Courrir",
+	"debugOpen":"Ouvrir le menu de debug",
+	"use_item":"Utiliser l'outil actuel",
+	"inventory":"Ouvrir l'inventaire",
+	"helpMenu":"Ouvrir/fermer le panneau aide",
+	"dialog_enter":"Discuter avec le personnage"
+}
+var existingActions=["up","down","left","right","sprint","debugOpen","use_item","inventory","helpMenu","dialog_enter"];
+var actionsToShowInHelp= ["up","down","left","right","sprint","use_item","inventory","dialog_enter","helpMenu"]
+var actionKeys={}
+func updateKeySettings():
+	var nactionKeys={}
+	for i in existingActions:
+		if !InputMap.has_action(StringName(i)):
+			print(InputMap.get_actions())
+			return
+		nactionKeys[i]=[]
+		for k in InputMap.action_get_events(i):
+			nactionKeys[i].append(k.as_text())
+	print(nactionKeys)
+	actionKeys = nactionKeys.duplicate(true)
+	return
+func getKeySettings():
+	return actionKeys
 func register_current_player(caller:CharacterBody2D):
 	currentPlayer=caller
 func getPlayer():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bw2g0ehqjgbhs"]
+[gd_scene load_steps=54 format=3 uid="uid://bw2g0ehqjgbhs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d53a7"]
 [ext_resource type="Texture2D" uid="uid://bim1oaptyvg7c" path="res://Assets/Peasant/peasant.png" id="2_43dtm"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://bn4aie364405q" path="res://Assets/Peasant/peasant_walk_008.png" id="22_64yv0"]
 [ext_resource type="Script" path="res://debug_menu.gd" id="40_a6e3t"]
 [ext_resource type="Script" path="res://item_slash_area_2d.gd" id="40_y7p1n"]
+[ext_resource type="Script" path="res://v_box_container.gd" id="42_bomsu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lyp5n"]
 animations = [{
@@ -221,6 +222,20 @@ font_size = 41
 [sub_resource type="LabelSettings" id="LabelSettings_qv8e8"]
 font_size = 124
 
+[sub_resource type="LabelSettings" id="LabelSettings_p07ap"]
+font_color = Color(1, 0.858824, 0.266667, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vo43n"]
+font_size = 11
+font_color = Color(0.913097, 0.9051, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dt6n"]
+font_size = 20
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_d53a7")
@@ -283,6 +298,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlayerNameLabel" type="Label" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -559,6 +575,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -575,6 +592,64 @@ text = "UniRPG"
 label_settings = SubResource("LabelSettings_qv8e8")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CurrentMission" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -125.0
+offset_right = 250.0
+offset_bottom = 125.0
+grow_vertical = 2
+alignment = 1
+
+[node name="CurrentMissionTitle" type="Label" parent="CanvasLayer/UI/CurrentMission"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Allez voir le maire"
+label_settings = SubResource("LabelSettings_p07ap")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CurrentMissionDescription" type="Label" parent="CanvasLayer/UI/CurrentMission"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Il se situe dans la ville"
+label_settings = SubResource("LabelSettings_vo43n")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("42_bomsu")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Aide commandes de jeu:"
+label_settings = SubResource("LabelSettings_7dt6n")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="CanvasLayer/UI/ChangeMap/VBoxContainer/AcceptChangeButton" to="." method="_on_accept_change_button_pressed"]
