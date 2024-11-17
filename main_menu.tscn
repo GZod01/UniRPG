@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://t4uuli5t1dls"]
+[gd_scene load_steps=5 format=3 uid="uid://t4uuli5t1dls"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_mntdo"]
 [ext_resource type="Texture2D" uid="uid://bnx05viaombt1" path="res://Assets/Baner.png" id="2_klq6n"]
+[ext_resource type="Theme" uid="uid://bkym534illgg5" path="res://maintheme.tres" id="3_5dxee"]
+[ext_resource type="FontFile" uid="uid://dubmjb327whkn" path="res://Assets/GameDevMarketBundle/rpg-ui-pack/FantasyRPGtitle (size 11).ttf" id="3_at8lx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -51,12 +53,15 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_at8lx")
+theme_override_font_sizes/font_size = 64
 text = "UniRPG"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_5dxee")
 text = "Start"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

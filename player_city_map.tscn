@@ -5806,7 +5806,8 @@ position = Vector2(-2, 8.5)
 shape = SubResource("RectangleShape2D_tx5sn")
 
 [node name="Maire" parent="Maire" instance=ExtResource("7_6mkow")]
-scale = Vector2(0.722222, 0.694444)
+position = Vector2(-1.00001, -3)
+scale = Vector2(0.264957, 0.254766)
 
 [node name="Label" type="Label" parent="Maire"]
 offset_left = -29.0

@@ -6,4 +6,4 @@
 shader = ExtResource("1_vns5l")
 shader_parameter/from = PackedColorArray(0.764706, 0.556863, 0, 1, 1, 0.85098, 0.611765, 1, 0.0392157, 0.615686, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 shader_parameter/new = PackedColorArray(0.678944, 0.678944, 0.678944, 1, 0.953605, 0.777258, 0.717898, 1, 0.562419, 0.206857, 0.211886, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-shader_parameter/tolerance = 0.084
+shader_parameter/tolerance = 0.0

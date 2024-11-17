@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf6p6akffjxrp"]
+[gd_scene load_steps=4 format=3 uid="uid://bf6p6akffjxrp"]
 
-[ext_resource type="Material" uid="uid://hwftlocw54b2" path="res://CharactersSpritesScenes/mairematerial.tres" id="1_v3kl7"]
-[ext_resource type="Texture2D" uid="uid://bim1oaptyvg7c" path="res://Assets/Peasant/peasant.png" id="2_ykl08"]
+[ext_resource type="Texture2D" uid="uid://b0a1pbewcy78n" path="res://Assets/GameDevMarketBundle/monsters-time-fantasy-rpg-sprite-pack/TimeFantasy_Monsters/2x/npc5.png" id="1_dgxro"]
 
-[node name="Maire" type="Sprite2D"]
-material = ExtResource("1_v3kl7")
-texture = ExtResource("2_ykl08")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbbx"]
+atlas = ExtResource("1_dgxro")
+region = Rect2(52, 288, 52, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olo0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbbx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Maire" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_olo0h")
