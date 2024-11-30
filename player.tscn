@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://brdme6yp1gnj2"]
+[gd_scene load_steps=39 format=3 uid="uid://brdme6yp1gnj2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d53a7"]
 [ext_resource type="Texture2D" uid="uid://d00tji1jq0mt4" path="res://Assets/kenney_roguelike-rpg-pack/Spritesheet/BoatBack.png" id="2_xgs83"]
@@ -7,11 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bhg2ayooyfler" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/pose2.png" id="5_n425y"]
 [ext_resource type="Texture2D" uid="uid://ck4ujbngfnnji" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/pose3.png" id="6_cm7dp"]
 [ext_resource type="Texture2D" uid="uid://c3j7esywv47yl" path="res://Assets/Peasant/peasant_walk_001.png" id="15_ixgwo"]
+[ext_resource type="PackedScene" uid="uid://d2jn48bn4d3l1" path="res://fantasy_characters_animated_sprite.tscn" id="15_lm1hf"]
 [ext_resource type="Texture2D" uid="uid://dca6l3husbsev" path="res://Assets/Peasant/peasant_walk_002.png" id="16_lekt5"]
 [ext_resource type="Texture2D" uid="uid://3fkvhc1q0r6k" path="res://Assets/Peasant/peasant_walk_003.png" id="17_fjl34"]
 [ext_resource type="Texture2D" uid="uid://cpwhde5kc7rex" path="res://Assets/Peasant/peasant_walk_004.png" id="18_xrdp0"]
+[ext_resource type="Texture2D" uid="uid://dd4qrvro60rpo" path="res://Assets/GameDevMarketBundle/rpg-ui-pack/UI assets (3x).png" id="19_6l004"]
 [ext_resource type="Texture2D" uid="uid://c1tvs8q3o5qrg" path="res://Assets/Peasant/peasant_walk_005.png" id="19_11wgd"]
+[ext_resource type="Script" path="res://help_focus.gd" id="19_i1j0r"]
 [ext_resource type="Texture2D" uid="uid://4n4ybvs57qpq" path="res://Assets/Peasant/peasant_walk_006.png" id="20_p2ii3"]
+[ext_resource type="Texture2D" uid="uid://dhpv6ubxbavib" path="res://Assets/items/empty_hand.png" id="21_3mwb5"]
 [ext_resource type="Texture2D" uid="uid://byi0t84ypn7bm" path="res://Assets/Peasant/peasant_walk_007.png" id="21_yqhi3"]
 [ext_resource type="Texture2D" uid="uid://bn4aie364405q" path="res://Assets/Peasant/peasant_walk_008.png" id="22_64yv0"]
 [ext_resource type="Script" path="res://debug_menu.gd" id="40_a6e3t"]
@@ -75,9 +79,6 @@ font_size = 30
 font_color = Color(1, 0, 0, 1)
 outline_size = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y215y"]
-bg_color = Color(0.160784, 0.160784, 0.160784, 0.435294)
-
 [sub_resource type="LabelSettings" id="LabelSettings_tupri"]
 font_size = 23
 
@@ -101,6 +102,31 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_7dt6n"]
 font_size = 20
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhwrr"]
+atlas = ExtResource("19_6l004")
+region = Rect2(9, 825, 27, 33)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5qn0o"]
+load_path = "res://.godot/imported/UI assets (3x).png-e37ac9553625c292f3337eaa7ba55448.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1idq7"]
+atlas = SubResource("CompressedTexture2D_5qn0o")
+region = Rect2(105, 828, 27, 30)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eceh0"]
+load_path = "res://.godot/imported/UI assets (3x).png-e37ac9553625c292f3337eaa7ba55448.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u700"]
+atlas = SubResource("CompressedTexture2D_eceh0")
+region = Rect2(153, 825, 27, 33)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3bm87"]
+load_path = "res://.godot/imported/UI assets (3x).png-e37ac9553625c292f3337eaa7ba55448.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uouy8"]
+atlas = SubResource("CompressedTexture2D_3bm87")
+region = Rect2(249, 828, 27, 30)
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_d53a7")
@@ -116,12 +142,16 @@ texture = ExtResource("2_xgs83")
 z_index = 1
 texture = ExtResource("3_22ddu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="FantasyCharactersAnimatedSprite" parent="." instance=ExtResource("15_lm1hf")]
+scale = Vector2(0.5, 0.5)
+chara_no2 = 3
+
+[node name="oldAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-16, -11)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_lyp5n")
-frame = 1
-frame_progress = 0.838944
+animation = &"walk"
 centered = false
 offset = Vector2(-8, -16)
 
@@ -192,8 +222,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -148.0
-offset_bottom = 38.0
+offset_left = -163.0
+offset_top = 17.0
+offset_right = -15.0
+offset_bottom = 55.0
 grow_horizontal = 0
 text = "x/x vies"
 label_settings = SubResource("LabelSettings_nmcjf")
@@ -252,19 +284,18 @@ fixed_icon_size = Vector2i(70, 70)
 
 [node name="ChangeMap" type="Panel" parent="CanvasLayer/UI"]
 visible = false
+self_modulate = Color(1, 1, 1, 0.584314)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -169.5
-offset_top = -153.0
-offset_right = 169.5
-offset_bottom = 153.0
+anchor_bottom = 1.0
+offset_left = -284.0
+offset_top = -299.0
+offset_right = 284.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_y215y")
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/ChangeMap"]
 layout_mode = 1
@@ -296,19 +327,18 @@ horizontal_alignment = 1
 
 [node name="Proposition" type="Panel" parent="CanvasLayer/UI"]
 visible = false
+self_modulate = Color(1, 1, 1, 0.584314)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -169.5
-offset_top = -153.0
-offset_right = 169.5
-offset_bottom = 153.0
+anchor_bottom = 1.0
+offset_left = -284.0
+offset_top = -299.0
+offset_right = 284.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_y215y")
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/Proposition"]
 layout_mode = 1
@@ -488,20 +518,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="HelpMenu" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_top = -40.0
+offset_bottom = 40.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("42_bomsu")
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/UI/HelpMenu"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Aide commandes de jeu:"
@@ -510,14 +541,85 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+[node name="Label2" type="RichTextLabel" parent="CanvasLayer/UI/HelpMenu"]
+custom_minimum_size = Vector2(250, 300)
 layout_mode = 2
+
+[node name="HelpFocus" type="HBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -308.0
+offset_top = -81.0
+offset_right = -54.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("19_i1j0r")
+
+[node name="SelectTexture" type="TextureRect" parent="CanvasLayer/UI/HelpFocus"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_fhwrr")
+
+[node name="SelectTexturePressed" type="TextureRect" parent="CanvasLayer/UI/HelpFocus"]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_1idq7")
+
+[node name="SelectLabel" type="Label" parent="CanvasLayer/UI/HelpFocus"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Sélectionner"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="CancelTexture" type="TextureRect" parent="CanvasLayer/UI/HelpFocus"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0u700")
+
+[node name="CancelTexturePressed" type="TextureRect" parent="CanvasLayer/UI/HelpFocus"]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_uouy8")
+
+[node name="CancelLabel" type="Label" parent="CanvasLayer/UI/HelpFocus"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Annuler"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentEquiped" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = -181.0
+offset_right = 180.0
+offset_bottom = -45.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/CurrentEquiped"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.4
+texture = ExtResource("21_3mwb5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/CurrentEquiped"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 3.8
+text = "Empty Hand"
+horizontal_alignment = 1
+
+[connection signal="animation_finished" from="oldAnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="item_activated" from="CanvasLayer/UI/Inventory/VBoxContainer/InventorySlots" to="." method="_on_inventory_slots_item_activated"]
 [connection signal="pressed" from="CanvasLayer/UI/ChangeMap/VBoxContainer/AcceptChangeButton" to="." method="_on_accept_change_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Proposition/VBoxContainer/Accept" to="." method="_on_accept_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Proposition/VBoxContainer/Refuse" to="." method="_on_refuse_pressed"]

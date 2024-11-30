@@ -12,8 +12,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if ! Globals.getPlayer():return
 	if Globals.playerInventory.hash()!=precedentInv.hash():
-		print("updated")
-		print(precedentInv)
+		# print("updated")
+		# print(precedentInv)
 		$VBoxContainer/HBoxContainer2/OptionButton.clear()
 		for i in Globals.getPlayer().get_full_inv():
 			var texture = Globals.preload_res(Globals.items[i["item"]]["texture"])

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://partcle_text_emitter.gd" id="1_ybo1d"]
 [ext_resource type="Material" uid="uid://c0d4e8o018pt2" path="res://partcle_text_emitter.tres" id="4_a3sjm"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_nmbm6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dy68g"]
 viewport_path = NodePath(".")
 
 [node name="PartcleTextEmitter" type="Node2D"]
@@ -18,7 +18,7 @@ text = "Helloaeraererar"
 emitting = false
 amount = 1
 process_material = ExtResource("4_a3sjm")
-texture = SubResource("ViewportTexture_nmbm6")
+texture = SubResource("ViewportTexture_dy68g")
 lifetime = 3.0
 one_shot = true
 explosiveness = 1.0

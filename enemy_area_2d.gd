@@ -7,9 +7,16 @@ extends Area2D
 @export var speed:float=100.0
 @export var lives:int = 5
 var die:bool=false
+var already_changing:bool=false
 var curplayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if int(Dialogic.VAR.get_variable("PieuvreState"))==1:
+		die=true
+		already_changing=true
+		get_tree().current_scene.getPlayer().show_proposition(
+			"Vous ne pouvez pas vous battre contre le monstre pour le moment, allez voir le maire pour finir la mission avant de battre le monstre.",
+			fight_unavailable,"Retourner au village",null,true)
 	$AnimatedSprite2D.play("default")
 	$PetitCooldown.wait_time=cooldown_petite_attaque
 	$GrosCooldown.wait_time=cooldown_grosse_attaque
@@ -30,12 +37,15 @@ func _process(delta: float) -> void:
 	global_position+=v
 
 func animation_finished():
-	if die:
+	if die and !already_changing:
 		get_tree().current_scene.getPlayer().show_proposition(
 			"Vous avez vaincu le monstre! Félicitation, retournez au village voir le maire pour recevoir votre récompense!",
 			change_scene_to_wow,"Retourner au village",null,true)
+func fight_unavailable():
+	get_tree().current_scene.change_map("res://player_city_map.tscn","pieuvrevictoire")
+	queue_free()
 func change_scene_to_wow():
-	Dialogic.VAR.set_variable("PieuvreKilledAmount",int(Dialogic.VAR.get_variable("PieuvreKilledAmount"))+1)
+	Dialogic.VAR.set_variable("PieuvreState",int(Dialogic.VAR.get_variable("PieuvreState"))+1)
 	get_tree().current_scene.change_map("res://player_city_map.tscn","pieuvrevictoire")
 	queue_free()
 func hit(amount:int=1):

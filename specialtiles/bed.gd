@@ -25,8 +25,7 @@ func sleep():
 			print(self.playernode)
 			print("called by ")
 			print(self)
-			playernode.get_node("AnimatedSprite2D").play("die")
-			playernode.get_node("AnimatedSprite2D").flip_h=true;
+			playernode.playAnimation("die")
 func sth_exit(sth: Node2D) -> void:
 	if "isPlayer" in sth and sth.isPlayer==true:
 		$AnimatedSprite2D.play("default")

@@ -35,9 +35,9 @@ void fragment()
 		if(edited){break;}
 		vec3 initial_hsv = rgb2hsv(from[loop_i].rgb);
 		vec3 hsv_shift = rgb2hsv(new[loop_i].rgb) - initial_hsv;
-		
+
 		float hue = initial_hsv.r;
-		
+
 		// the .r here represents HUE, .g is SATURATION, .b is LUMINANCE
 		if (hue - source_hsv.r >= -_tol && hue - source_hsv.r <= +_tol)
 		{
@@ -45,7 +45,7 @@ void fragment()
 			tex.rgb = hsv2rgb(final_hsv);
 			edited=true;
 		}
-		
+
 	}
 	COLOR = tex;
 }

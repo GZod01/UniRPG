@@ -3,6 +3,10 @@ extends Node
 var res_preloaded: = {
 	
 }
+var empty_hand={
+	"name":"Main vide",
+	"texture":"res://Assets/items/empty_hand.png"
+}
 var items={
 	"resurrectPotion":{
 		"name":"Potion de Résurrection",
@@ -53,19 +57,11 @@ var playerInventory = {
 			"quantity":1
 		}
 	],
-	"currentEquipped":0,# -1 for hand slot
-	"maxEquipSlots":4,
-	"equipSlots":[
-		{
-			"item":"grandFatherSword",
-			"quantity":1
-		}
-	]
+	"currentEquipped":-1,# -1 for hand slot
 }
 var storySave = {
 	"inv":{},
 	"storyVariables":{ #Dialogic Variables
-		"PieuvreKilleld":0
 	},
 	"actionKeys":{}
 }
@@ -84,21 +80,40 @@ var actionsKeysDescriptions = {
 	"use_item":"Utiliser l'outil actuel",
 	"inventory":"Ouvrir l'inventaire",
 	"helpMenu":"Ouvrir/fermer le panneau aide",
-	"dialog_enter":"Discuter avec le personnage"
+	"dialog_enter":"Discuter avec le personnage",
+	"pause":"Activer/Desactiver la pause"
 }
-var existingActions=["up","down","left","right","sprint","debugOpen","use_item","inventory","helpMenu","dialog_enter"];
-var actionsToShowInHelp= ["up","down","left","right","sprint","use_item","inventory","dialog_enter","helpMenu"]
+var existingActions=["up","down","left","right","sprint","debugOpen","use_item","inventory","helpMenu","dialog_enter","pause"];
+var actionsToShowInHelp= ["up","down","left","right","sprint","use_item","inventory","dialog_enter","helpMenu","pause"]
 var actionKeys={}
+
+func _ready():
+	self.process_mode=Node.PROCESS_MODE_ALWAYS
+	var pause_menu = load("res://pause_menu.tscn").instantiate()
+	pause_menu.name="PauseMenu"
+	self.add_child(pause_menu,true)
+	await Dialogic.ready
+	load_game()
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		$PauseMenu.togglePause()
+
 func updateKeySettings():
 	var nactionKeys={}
+	#print("entering")
 	for i in existingActions:
+		#print(i)
+		print(InputMap.has_action(StringName(i)))
 		if !InputMap.has_action(StringName(i)):
-			print(InputMap.get_actions())
-			return
+			#print(InputMap.get_actions())
+			continue
+		#print("\n\n---\n\n")
 		nactionKeys[i]=[]
+		#print(nactionKeys)
 		for k in InputMap.action_get_events(i):
 			nactionKeys[i].append(k.as_text())
-	print(nactionKeys)
+	#print(nactionKeys)
 	actionKeys = nactionKeys.duplicate(true)
 	return
 func getKeySettings():
@@ -121,7 +136,7 @@ func load_game():
 			storySave["inv"][k]=playerInventory[k]
 	playerInventory=storySave["inv"]
 	for k in storySave.storyVariables.keys():
-		Dialogic.VAR.set_variable(k,storySave.storyVariable[k])
+		Dialogic.VAR.set_variable(k,storySave.storyVariables[k])
 
 func save_game():
 	storySave["inv"]=playerInventory
@@ -129,6 +144,8 @@ func save_game():
 		storySave.storyVariables[k]=Dialogic.VAR.get_variable(k)
 	var tosave = JSON.stringify(storySave)
 	print(tosave)
+	var f =FileAccess.open("user://unirpg.sav",FileAccess.WRITE)
+	f.store_string(tosave)
 func preload_res(filename:String,forcereload:bool=false)->Resource:
 	#print("start laod")
 	var havetoreload:bool=false

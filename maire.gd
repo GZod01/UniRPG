@@ -24,5 +24,5 @@ func _input(event:InputEvent):
 		return
 
 	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
-		Dialogic.start('unirpg')
+		Dialogic.start('timelinemaire')
 		get_viewport().set_input_as_handled()

@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw7wbpk4eqxim"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_h7jyp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q87ku"]
+font_size = 27
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+visible = false
+z_index = 99
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7jyp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = -166.0
+offset_right = 115.5
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_q87ku")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Continuer"
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Menu principal"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

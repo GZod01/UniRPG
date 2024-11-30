@@ -1,0 +1,281 @@
+[gd_scene load_steps=33 format=3 uid="uid://d2jn48bn4d3l1"]
+
+[ext_resource type="Script" path="res://fantasy_char_anim_sprite.gd" id="1_8ufjj"]
+[ext_resource type="Texture2D" uid="uid://cgnp3c8or3yoa" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/down_stand.png" id="1_r2tcn"]
+[ext_resource type="Texture2D" uid="uid://vaybdnfwbgnb" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/down_walk1.png" id="2_rbhjh"]
+[ext_resource type="Texture2D" uid="uid://buooww1d5pvip" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/down_walk2.png" id="3_ggoxp"]
+[ext_resource type="Texture2D" uid="uid://buhj26t640ixd" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/laugh1.png" id="4_oyxc2"]
+[ext_resource type="Texture2D" uid="uid://cgcdpnt8dr2m0" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/laugh2.png" id="5_kouxf"]
+[ext_resource type="Texture2D" uid="uid://b3mawd7bs13sg" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/laugh3.png" id="6_5npfh"]
+[ext_resource type="Texture2D" uid="uid://tgtrtp63r6gv" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/left_stand.png" id="7_stpv3"]
+[ext_resource type="Texture2D" uid="uid://b6rwnomoeh0bb" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/left_walk1.png" id="8_padi0"]
+[ext_resource type="Texture2D" uid="uid://crxmr0sky073k" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/left_walk2.png" id="9_mdhpc"]
+[ext_resource type="Texture2D" uid="uid://dr8fegx4k1sf3" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/shake1.png" id="10_73g0c"]
+[ext_resource type="Texture2D" uid="uid://dbyy0a6ku2rnk" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/shake2.png" id="11_2lc5w"]
+[ext_resource type="Texture2D" uid="uid://dupkjrugds5m5" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/shake3.png" id="12_uctoi"]
+[ext_resource type="Texture2D" uid="uid://dxaofov555emw" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/pose1.png" id="13_cqa3j"]
+[ext_resource type="Texture2D" uid="uid://bhg2ayooyfler" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/pose2.png" id="14_2pdje"]
+[ext_resource type="Texture2D" uid="uid://ck4ujbngfnnji" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/pose3.png" id="15_3hws6"]
+[ext_resource type="Texture2D" uid="uid://q5umpi3oclle" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/right_stand.png" id="16_imn41"]
+[ext_resource type="Texture2D" uid="uid://bn1jdo652bksa" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/right_walk1.png" id="17_mfnrg"]
+[ext_resource type="Texture2D" uid="uid://bg2xe48ida8ym" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/right_walk2.png" id="18_tealc"]
+[ext_resource type="Texture2D" uid="uid://omlj7bwsp3fu" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/surprise.png" id="19_yfjdy"]
+[ext_resource type="Texture2D" uid="uid://cq883meal13ar" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/up_stand.png" id="20_a8y20"]
+[ext_resource type="Texture2D" uid="uid://c6qlinqowi37u" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/up_walk1.png" id="21_0gj2f"]
+[ext_resource type="Texture2D" uid="uid://cg3h5f4ove6d2" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/up_walk2.png" id="22_tjp2p"]
+[ext_resource type="Texture2D" uid="uid://36e6ss2pqbr0" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/nod1.png" id="23_donin"]
+[ext_resource type="Texture2D" uid="uid://dk2suyhdpahgt" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/nod2.png" id="24_s6771"]
+[ext_resource type="Texture2D" uid="uid://ckp3bhlw86j2f" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_3/nod3.png" id="25_ajiri"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ijbym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r2tcn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r2tcn")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rbhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ggoxp")
+}],
+"loop": true,
+"name": &"down_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_oyxc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kouxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5npfh")
+}],
+"loop": true,
+"name": &"laugh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_stpv3")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_padi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mdhpc")
+}],
+"loop": true,
+"name": &"left_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_73g0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2lc5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uctoi")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cqa3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2pdje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3hws6")
+}],
+"loop": true,
+"name": &"pose",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_imn41")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_mfnrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tealc")
+}],
+"loop": true,
+"name": &"right_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_yfjdy")
+}],
+"loop": true,
+"name": &"surprise",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_a8y20")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_0gj2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tjp2p")
+}],
+"loop": true,
+"name": &"up_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_donin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_s6771")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ajiri")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_2okgy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2ya34"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8lb0x"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_xxwdx"]
+resource_name = "hit"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3),
+"transitions": PackedFloat32Array(1, 0.133972, 1.41421),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.0823529, 0.2, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5k2cg"]
+_data = {
+"RESET": SubResource("Animation_2okgy"),
+"default": SubResource("Animation_2ya34"),
+"die": SubResource("Animation_8lb0x"),
+"hit": SubResource("Animation_xxwdx")
+}
+
+[node name="FantasyCharactersAnimatedSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ijbym")
+script = ExtResource("1_8ufjj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5k2cg")
+}

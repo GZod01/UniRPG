@@ -9,16 +9,17 @@
 "style": ""
 },
 "default_portrait": "Default",
-"description": "C'est le maire de ton village connard!",
+"description": "C'est le maire de ton village",
 "display_name": "Le Maire",
 "mirror": false,
-"nicknames": ["Poto"],
+"nicknames": ["Maire"],
 "offset": Vector2(0, 0),
 "portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://Assets/Characters/th-removebg-preview.png\""
+"image": "\"res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/npc/npc1_4/down_stand.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 0.5,

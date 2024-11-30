@@ -16,6 +16,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func change_map(scs:String,fromwhere:String=""):
+	Globals.save_game()
 	map_name=scs.trim_prefix("res://").trim_suffix(".tscn")
 	var sc:PackedScene=Globals.preload_res(scs)#await Globals.preload_res(scs)
 	for n in $Map.get_children(true):
@@ -28,7 +29,7 @@ func change_map(scs:String,fromwhere:String=""):
 	else:
 		
 		return null
-	print(newn)
+	#print(newn)
 	$Map.add_child(newn)
 	if newn.has_node("playerspawn"+fromwhere):
 		print(newn.get_node("playerspawn"+fromwhere).global_position)
@@ -38,3 +39,8 @@ func change_map(scs:String,fromwhere:String=""):
 		$Player.global_position= newn.get_node("playerspawn").global_position
 	else:
 		$Player.global_position=Vector2(0,0)
+	#print(newn.get_meta_list())
+	map_player_zoom=3
+	if newn.has_meta("player_zoom") and int(newn.get_meta("player_zoom"))>0:
+		map_player_zoom=int(newn.get_meta("player_zoom"))
+		print("wow super cool"+str(map_player_zoom))
