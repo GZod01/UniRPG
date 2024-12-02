@@ -1,14 +1,181 @@
-[gd_scene load_steps=2 format=3 uid="uid://jac4eurttev1"]
+[gd_scene load_steps=10 format=3 uid="uid://jac4eurttev1"]
 
-[ext_resource type="Script" path="res:///custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="Script" path="res://customize_character.gd" id="1_8thvg"]
+[ext_resource type="PackedScene" uid="uid://d2jn48bn4d3l1" path="res://fantasy_characters_animated_sprite.tscn" id="1_10b0t"]
+[ext_resource type="Texture2D" uid="uid://b1nf0u7x5c08h" path="res://Assets/kenney_roguelike-rpg-pack/Spritesheet/roguelikeSheet_transparent.png" id="2_gbcil"]
+[ext_resource type="Texture2D" uid="uid://dkjl7s78uwtyo" path="res://Assets/miroir.png" id="3_iwu7l"]
+[ext_resource type="Texture2D" uid="uid://dd4qrvro60rpo" path="res://Assets/GameDevMarketBundle/rpg-ui-pack/UI assets (3x).png" id="4_o2sb8"]
 
-[node name="LayeredPortrait" type="CanvasGroup"]
-script = ExtResource("1_uubi5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7eq6"]
+atlas = ExtResource("2_gbcil")
+region = Rect2(629, 289, 16, 17)
 
-[node name="Layer1" type="Sprite2D" parent="."]
+[sub_resource type="AtlasTexture" id="AtlasTexture_injb7"]
+atlas = ExtResource("4_o2sb8")
+region = Rect2(198, 396, 33, 24)
 
-[node name="Group1" type="Node2D" parent="."]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kuegl"]
+load_path = "res://.godot/imported/UI assets (3x).png-e37ac9553625c292f3337eaa7ba55448.ctex"
 
-[node name="Layer1" type="Sprite2D" parent="Group1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6f7m"]
+atlas = SubResource("CompressedTexture2D_kuegl")
+region = Rect2(249, 396, 33, 24)
 
-[node name="Layer2" type="Sprite2D" parent="Group1"]
+[node name="CustomizeCharacter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8thvg")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_g7eq6")
+expand_mode = 5
+
+[node name="miroir" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 206.0
+offset_top = 32.0
+offset_right = -228.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Foreground" type="TextureRect" parent="miroir"]
+modulate = Color(1, 1, 1, 0.168627)
+z_index = 55
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iwu7l")
+stretch_mode = 5
+
+[node name="Background" type="TextureRect" parent="miroir"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iwu7l")
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 255
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -333.0
+offset_top = -147.0
+offset_right = 333.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Prev" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = SubResource("AtlasTexture_injb7")
+icon_alignment = 1
+expand_icon = true
+
+[node name="OptionButton" type="OptionButton" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.8
+
+[node name="Next" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = SubResource("AtlasTexture_g6f7m")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -521.5
+offset_top = -269.0
+offset_right = 521.5
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CancelButton" type="Button" parent="HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Annuler"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.8
+
+[node name="Control" type="Control" parent="HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(12.685, 12.685)
+
+[node name="FantasyCharactersAnimatedSprite" parent="HBoxContainer/Control/Control" instance=ExtResource("1_10b0t")]
+
+[node name="Panel3" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AcceptButton" type="Button" parent="HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sauvegarder"
+
+[connection signal="pressed" from="Panel/HBoxContainer/Prev" to="." method="_on_prev_pressed"]
+[connection signal="item_selected" from="Panel/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Panel/HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel2/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel3/AcceptButton" to="." method="_on_accept_button_pressed"]

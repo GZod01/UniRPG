@@ -16,3 +16,39 @@ shape = SubResource("RectangleShape2D_3j351")
 [node name="PetitCooldown" type="Timer" parent="."]
 
 [node name="GrosCooldown" type="Timer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="Control/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -10.5
+offset_right = 15.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Animal
+1/1 Vies"
+horizontal_alignment = 1

@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://cn7v6cfe7ivb1"]
+[gd_scene load_steps=15 format=4 uid="uid://cn7v6cfe7ivb1"]
 
 [ext_resource type="Texture2D" uid="uid://b1nf0u7x5c08h" path="res://Assets/kenney_roguelike-rpg-pack/Spritesheet/roguelikeSheet_transparent.png" id="1_5bap1"]
-[ext_resource type="Script" path="res://enemy_area_2d.gd" id="2_r8yfi"]
 [ext_resource type="Texture2D" uid="uid://c6ybmairrh6rs" path="res://Assets/Monsters/Pieuvre.png" id="3_bwpok"]
 [ext_resource type="Texture2D" uid="uid://bphpghanfo8nl" path="res://Assets/Monsters/sans titre.png" id="4_vbjer"]
+[ext_resource type="PackedScene" uid="uid://d4htanwxodbw" path="res://enemy_area_2d.tscn" id="5_37dkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gvaw"]
 texture = ExtResource("1_5bap1")
@@ -1723,8 +1723,6 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7gvaw")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j351"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0cyj"]
 atlas = ExtResource("3_bwpok")
 region = Rect2(0, 0, 64, 64)
@@ -1796,23 +1794,6 @@ tile_set = SubResource("TileSet_8bp6e")
 [node name="playerspawn" type="Node2D" parent="."]
 position = Vector2(103, 145)
 
-[node name="EnemyArea2D" type="Area2D" parent="."]
-position = Vector2(368, 129)
-script = ExtResource("2_r8yfi")
-lives = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea2D"]
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_3j351")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemyArea2D"]
+[node name="EnemyArea2D2" parent="." instance=ExtResource("5_37dkr")]
+position = Vector2(359, 144)
 sprite_frames = SubResource("SpriteFrames_uon3v")
-animation = &"die"
-frame = 1
-frame_progress = 0.457239
-
-[node name="PetitCooldown" type="Timer" parent="EnemyArea2D"]
-one_shot = true
-
-[node name="GrosCooldown" type="Timer" parent="EnemyArea2D"]
-one_shot = true

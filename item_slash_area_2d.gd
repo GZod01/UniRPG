@@ -43,5 +43,6 @@ func on_sth_entered(sth:Node2D):
 		finish_slash()
 func finish_slash():
 	isslashing=false
-	$CollisionShape2D.disabled=true
+	var a=func ():$CollisionShape2D.disabled=true
+	a.call_deferred()
 	self.hide()

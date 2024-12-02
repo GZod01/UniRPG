@@ -15,6 +15,7 @@ func _ready() -> void:
 	$Panel/HBoxContainer/OptionButton.select(storySaveIndex)
 	_on_option_button_item_selected(storySaveIndex)
 	$Panel/HBoxContainer/OptionButton.grab_focus()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,8 +27,9 @@ func _on_option_button_item_selected(index: int) -> void:
 	var sSelectedSkin = valarray[index]
 	if int(sSelectedSkin[0])<2 or int(sSelectedSkin[0])>5 or int(sSelectedSkin[1])<1 or int(sSelectedSkin[1])>8:
 		sSelectedSkin=str(Globals.DEFAULT_SKIN)
-	$Control/FantasyCharactersAnimatedSprite.chara_no1=int(sSelectedSkin[0])
-	$Control/FantasyCharactersAnimatedSprite.chara_no2=int(sSelectedSkin[1])
+	$HBoxContainer/Control/Control/FantasyCharactersAnimatedSprite.chara_no1=int(sSelectedSkin[0])
+	$HBoxContainer/Control/Control/FantasyCharactersAnimatedSprite.chara_no2=int(sSelectedSkin[1])
+	
 
 
 func _on_cancel_button_pressed() -> void:
@@ -41,3 +43,14 @@ func _on_accept_button_pressed() -> void:
 		sSelectedSkin=str(Globals.DEFAULT_SKIN)
 	Globals.storySave.selectedSkin=int(sSelectedSkin)
 	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+
+func _on_prev_pressed() -> void:
+	$Panel/HBoxContainer/OptionButton.select((($Panel/HBoxContainer/OptionButton.item_count-1)+$Panel/HBoxContainer/OptionButton.selected-1)%($Panel/HBoxContainer/OptionButton.item_count-1))
+	_on_option_button_item_selected($Panel/HBoxContainer/OptionButton.get_item_index($Panel/HBoxContainer/OptionButton.selected))
+	
+
+
+func _on_next_pressed() -> void:
+	$Panel/HBoxContainer/OptionButton.select($Panel/HBoxContainer/OptionButton.selected+1)
+	_on_option_button_item_selected($Panel/HBoxContainer/OptionButton.get_item_index($Panel/HBoxContainer/OptionButton.selected))
