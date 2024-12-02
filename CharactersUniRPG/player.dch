@@ -17,12 +17,13 @@
 "portraits": {
 "Super Portrait": {
 "export_overrides": {
-"image": "\"res://Assets/Characters/player.png\""
+"image": "\"res://Assets/GameDevMarketBundle/faction-expansion-woodland-folk/3x/Portraits/Troubadour (happy).png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 0.5,
-"scene": ""
+"scene": "res://layered_portrait_player.tscn"
 }
 },
 "scale": 1.0

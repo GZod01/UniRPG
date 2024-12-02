@@ -59,11 +59,13 @@ var playerInventory = {
 	],
 	"currentEquipped":-1,# -1 for hand slot
 }
+const DEFAULT_SKIN:int=23
 var storySave = {
 	"inv":{},
 	"storyVariables":{ #Dialogic Variables
 	},
-	"actionKeys":{}
+	"actionKeys":{},
+	"selectedSkin":DEFAULT_SKIN
 }
 
 var currentPlayer:CharacterBody2D=CharacterBody2D.new()
@@ -97,6 +99,9 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
+		#print("hello")
+		#print($PauseMenu)
+		#print($PauseMenu.visible)
 		$PauseMenu.togglePause()
 
 func updateKeySettings():
@@ -137,13 +142,18 @@ func load_game():
 	playerInventory=storySave["inv"]
 	for k in storySave.storyVariables.keys():
 		Dialogic.VAR.set_variable(k,storySave.storyVariables[k])
+	var sSelectedSkin = str(storySave["selectedSkin"])
+	if int(sSelectedSkin[0])<2 or int(sSelectedSkin[0])>5 or int(sSelectedSkin[1])<1 or int(sSelectedSkin[1])>8:
+		sSelectedSkin=str(DEFAULT_SKIN)
+	storySave.selectedSkin=int(sSelectedSkin)
+	#print("loaded storysave: ",storySave)
 
 func save_game():
 	storySave["inv"]=playerInventory
 	for k in Dialogic.VAR.variables():
 		storySave.storyVariables[k]=Dialogic.VAR.get_variable(k)
 	var tosave = JSON.stringify(storySave)
-	print(tosave)
+	#print(tosave)
 	var f =FileAccess.open("user://unirpg.sav",FileAccess.WRITE)
 	f.store_string(tosave)
 func preload_res(filename:String,forcereload:bool=false)->Resource:
@@ -155,7 +165,7 @@ func preload_res(filename:String,forcereload:bool=false)->Resource:
 		havetoreload=true
 	if havetoreload:
 		var loaded = load(filename)#await load(filename)
-		print("passed here")
+		#print("passed here")
 		res_preloaded[filename] = loaded
 	#print("hide load")
 	return res_preloaded[filename]

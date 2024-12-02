@@ -18,16 +18,22 @@ func playAnimation(animation,custom_speed:float=1.0,from_end:bool=false):
 	animatedsprite.playAnimation(animation,custom_speed,from_end)
 	return
 func _ready() -> void:
+	var sSelectedSkin = str(Globals.storySave["selectedSkin"])
+	if int(sSelectedSkin[0])<2 or int(sSelectedSkin[0])>5 or int(sSelectedSkin[1])<1 or int(sSelectedSkin[1])>8:
+		sSelectedSkin=str(Globals.DEFAULT_SKIN)
+	$FantasyCharactersAnimatedSprite.chara_no1=int(sSelectedSkin[0])
+	$FantasyCharactersAnimatedSprite.chara_no2=int(sSelectedSkin[1])
 	Globals.updateKeySettings.call_deferred()
 	Globals.register_current_player(self)
 	$CanvasLayer/UI/InUI/LiveLabel.text = ("%d/%d vies" % [lives, max_lives])
-	print(get_tree().current_scene.name)
+	#print(get_tree().current_scene.name)
 	playAnimation("default")
 	inventory_update()
+	showCurrentEquipped()
 
 func inventory_update():
 	for i in range(Globals.playerInventory.maxBagSlots):
-		print(i)
+		#print(i)
 		var item = Globals.playerInventory.bagSlots[i] if len(Globals.playerInventory.bagSlots)>=i+1 else null
 		if item:
 			var icon = Globals.preload_res(Globals.items[item["item"]]["texture"])#await Globals.preload_res(Globals.items[item["item"]]["texture"])
@@ -49,7 +55,7 @@ func inventory_contain(id: String):
 func inventory_amount(id: String):
 	var ret=0
 	for ki in range(0,(len(Globals.playerInventory.bagSlots)-1)):
-		print(ki)
+		#print(ki)
 		var keytoedit = "bagSlots"
 		var i =Globals.playerInventory[keytoedit][ki]
 		if i["item"]==id:
@@ -71,10 +77,10 @@ func get_full_inv():
 	return toret
 func inventory_add_item(id:String, ammount:int):
 	if ammount<1:return
-	print(Globals.playerInventory)
-	print("added item %s with quantity %d"%[id,ammount])
+	#print(Globals.playerInventory)
+	#print("added item %s with quantity %d"%[id,ammount])
 	for ki in range(0,(len(Globals.playerInventory.bagSlots)-1)):
-		print(ki)
+		#print(ki)
 		var keytoedit = "bagSlots"
 		var i =Globals.playerInventory[keytoedit][ki]
 		if i["item"]==id and i["quantity"]<Globals.items[i["item"]]["stackable"]:
@@ -85,30 +91,30 @@ func inventory_add_item(id:String, ammount:int):
 				inventory_add_item(id,ammount-ammtoput)
 			inventory_update()
 			return
-	print("one")
+	#print("one")
 	if !((len(Globals.playerInventory.bagSlots)<=Globals.playerInventory["maxBagSlots"])):
 		show_proposition("Vous devez apprendre une compétence pour augmenter la taille de votre inventaire",Callable(func():$CanvasLayer/UI/CompetenceMenu.show()),"Je vais améliorer ma compétence 'Stockage Amélioré'")
-	print("three")
+	#print("three")
 	Globals.playerInventory.bagSlots.append({"item":id,"quantity":1})
 	inventory_add_item(id,ammount-1)
 	inventory_update()
 	return
 func inventory_rem_item(id:String,ammount:int):
-	print("will rem item "+id, ammount)
+	#print("will rem item "+id, ammount)
 	if ammount<1:return
-	print(ammount)
+	#print(ammount)
 	for ki in range(0,(len(Globals.playerInventory.bagSlots)-1)):
-		print(ki)
+		#print(ki)
 		var keytoedit = "bagSlots"
 		var i =Globals.playerInventory[keytoedit][ki]
 		var havetobreak:bool=false
 		if i["item"]==id:
-			print("removed")
+			#print("removed")
 			Globals.playerInventory[keytoedit][ki]["quantity"]-=ammount
 			havetobreak=true
 			spawnTextParticle("-"+str(ammount)+" "+Globals.items[id]["name"],Color.PURPLE)
 		if i["quantity"]<=0:
-			print("quantity 0 rem")
+			#print("quantity 0 rem")
 			Globals.playerInventory[keytoedit].pop_at(ki)
 			if havetobreak:return
 	return
@@ -190,7 +196,7 @@ func show_proposition(message: String, callback: Callable, custom_accept = null,
 	$CanvasLayer/UI/Proposition/VBoxContainer/Refuse.text = custom_refuse if custom_refuse else "Refuser"
 	$CanvasLayer/UI/Proposition/VBoxContainer/Refuse.disabled = refuse_disabled
 	$CanvasLayer/UI/Proposition.show()
-	print("callback", callback)
+	#print("callback", callback)
 	self.proposition_callback = Callable(callback)
 	self.proposition_refuse_callback = Callable(refuse_callback)
 func hide_proposition():
@@ -203,9 +209,9 @@ func _on_accept_change_button_pressed() -> void:
 
 func _on_accept_pressed() -> void:
 	hide_proposition()
-	print(proposition_callback)
+	#print(proposition_callback)
 	if proposition_callback is Callable and proposition_callback!=null:
-		print("hello")
+		#print("hello")
 		proposition_callback.call()
 	proposition_callback = Callable(func(): pass )
 	proposition_refuse_callback = Callable(func(): pass )
@@ -239,7 +245,7 @@ func hit(amount: int):
 		)
 	$CanvasLayer/UI/InUI/LiveLabel.text = ("%d/%d vies" % [lives, max_lives])
 	playAnimation("hit")
-	print("hitted with " + str(amount))
+	#print("hitted with " + str(amount))
 	spawnTextParticle(str(abs(amount)),Color.RED if amount>0 else Color.GREEN)
 func spawnTextParticle(message:String,color:Color):
 	var particleGeneratorHit = load("res://partcle_text_emitter.tscn").instantiate()

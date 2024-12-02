@@ -16,6 +16,9 @@ maire: Bonjour mon ami, je suis le maire, de quoi veux tu parler aujourd'hui?
 	maire: Oh wow, franchement t'es le meilleur aventurier de tous les temps que j'ai jamais connu, maintenant va dans la foret, une horde de 3 zombies t'y attedra, tue les s'il te plait!
 	set {PieuvreState} = 2
 - Parlons du village
+	join player leftmost [animation="Slide In Down"]
+	player: Comment va le village ?
+	leave player [animation="Bounce Out"]
 	maire: En ce moment tout va mal car les habitants ont peur des monstres, mais tu es entrain de nous aider donc on est sur la bonne voie.
 	jump SuperChoice
 - Non rien (partir)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsqudsvtqx6wp"]
+
+[ext_resource type="Script" path="res://custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="Texture2D" uid="uid://bmcaelbn7qg82" path="res://Assets/GameDevMarketBundle/over-80-rpg-characters-w-animations/timefantasy_characters/frames/chara/chara2_1/down_stand.png" id="2_jbo7e"]
+
+[node name="LayeredPortrait" type="CanvasGroup"]
+script = ExtResource("1_uubi5")
+
+[node name="Layer1" type="Sprite2D" parent="."]
+texture = ExtResource("2_jbo7e")
